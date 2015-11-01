@@ -1,35 +1,22 @@
-import request from 'superagent'
-import { 
+import {
   ADD_TO_CART,
   CHECKOUT_REQUEST,
-  RECEIVE_PRODUCTS } from '../constants/ActionTypes'
+  RECEIVE_PRODUCTS
+} from '../constants/ActionTypes';
+
+// import a library for data fetching, such as superagent
 
 export function getAllProducts() {
-  return dispatch => {
-    request.get('/products')
-    .set('Content-Type', 'application/json')
-    .end((err, res) => {
-      if (err) {
-        return new Error(err);
-      }
-
-      dispatch({
-        type: RECEIVE_PRODUCTS,
-        products: res.body
-      })
-    })
-  }
+  // Fetch the product data from the '/products' API endpoint.
+  // After it returns, dispatch an action to add the products.
+  // The products should be under action.products when sent to the reducer.
+  // Action type should be RECEIVE_PRODUCTS
 }
 
 export function addToCart(productId) {
-  return {
-    type: ADD_TO_CART,
-    productId
-  }
+  // Create an action of type ADD_TO_CART with action.productId = productId
 }
 
 export function checkout(products) {
-  return {
-      type: CHECKOUT_REQUEST
-  }
+  // Return a CHECKOUT_REQUEST action.
 }
