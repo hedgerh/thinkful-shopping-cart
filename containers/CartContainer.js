@@ -35,6 +35,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps,
-  { checkout }
-)(CartContainer)
+// Use connect to wrap the CartContainer with mapStateToProps
+// and the checkout action.
+export default CartContainer

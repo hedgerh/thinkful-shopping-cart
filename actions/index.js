@@ -14,7 +14,7 @@ export function getAllProducts() {
 }
 
 export function addToCart(productId) {
-  // Create an action of type ADD_TO_CART with action.productId = productId
+  // Return an ADD_TO_CART action with a productId property.
 }
 
 export function checkout(products) {

@@ -37,7 +37,6 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  { addToCart }
-)(ProductsContainer)
+// Use connect to wrap the ProductsContainer with mapStateToProps
+// and the addToCart action.
+export default ProductsContainer
